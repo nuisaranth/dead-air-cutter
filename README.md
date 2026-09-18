@@ -2,6 +2,8 @@
 
 Local web app that removes silences ("dead air") from teaching videos. Drop recordings into an inbox folder, review the auto-detected cuts in a timeline editor, and export a re-encoded file. Nothing leaves your machine and originals are never modified.
 
+> **Runs on localhost only.** Both servers bind to `127.0.0.1`, so nothing on your network can reach them. There is no login, no permission model and no sandbox: whoever opens the page can read, re-encode and move any video in the configured folders. Do not put this behind a public address, a tunnel or a reverse proxy, and do not change the bind address to `0.0.0.0`. It is a personal tool for one machine.
+
 ## Requirements
 
 - Node.js 20+ (tested with 24)
@@ -111,3 +113,7 @@ media/    default inbox / output / done folders
 ```
 
 See `STATUS.md` for what is done and what is next.
+
+---
+
+Built by [Team Digital](https://teamdigital.co) to cut the dead air out of workshop recordings.

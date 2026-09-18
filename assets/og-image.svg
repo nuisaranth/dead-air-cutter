@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="640" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0a0e14"/>
+      <stop offset="1" stop-color="#121a24"/>
+    </linearGradient>
+    <linearGradient id="barActive" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5eead4"/>
+      <stop offset="1" stop-color="#14b8a6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="640" fill="url(#bg)"/>
+
+  <!-- subtle dot grid -->
+  <g fill="#1c2530">
+    <!-- generated grid -->
+  </g>
+
+  <!-- top label -->
+  <text x="80" y="96" font-family="Consolas, 'Courier New', monospace" font-size="20" fill="#5eead4" letter-spacing="2">DEAD AIR CUTTER</text>
+  <text x="80" y="122" font-family="Consolas, 'Courier New', monospace" font-size="16" fill="#5a6b7a" letter-spacing="1">127.0.0.1:5173 &#183; local &#183; ffmpeg</text>
+
+  <!-- title -->
+  <text x="78" y="230" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="72" fill="#f4f6f8">Cut the silence.</text>
+  <text x="78" y="310" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="72" fill="#f4f6f8">Keep the signal.</text>
+
+  <!-- subtitle -->
+  <text x="80" y="358" font-family="'Segoe UI', Arial, sans-serif" font-size="24" fill="#9aa7b4">Automatically removes dead air from teaching &amp; screen-recorded video.</text>
+
+  <!-- waveform group placeholder, bars injected below -->
+  <g id="waveform"></g>
+
+  <!-- cut bracket markers -->
+  <g id="cutmarkers"></g>
+
+  <!-- footer -->
+  <text x="80" y="600" font-family="Consolas, 'Courier New', monospace" font-size="18" fill="#465563">github.com/nuisaranth/dead-air-cutter</text>
+</svg>

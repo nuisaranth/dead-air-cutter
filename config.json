@@ -1,0 +1,21 @@
+{
+  "inbox": "./media/inbox",
+  "output": "./media/output",
+  "done": "./media/done",
+  "data": "./data",
+  "port": 5175,
+  "ffmpegPath": "ffmpeg",
+  "ffprobePath": "ffprobe",
+  "concurrency": 1,
+  "proxy": { "height": 480, "encoder": "auto" },
+  "export": {
+    "encoder": "libx264",
+    "crf": 18,
+    "preset": "medium",
+    "audioBitrate": "192k",
+    "resolution": "auto",
+    "fps": "auto",
+    "audioFormat": "wav"
+  },
+  "defaults": { "thresholdDb": -35, "minDuration": 0.6, "padding": 0.15 }
+}

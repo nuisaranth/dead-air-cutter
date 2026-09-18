@@ -116,4 +116,4 @@ See `STATUS.md` for what is done and what is next.
 
 ---
 
-Built by [Team Digital](https://teamdigital.co) to cut the dead air out of workshop recordings.
+Built by [Team Digital](https://www.teamdigital.co) to cut the dead air out of workshop recordings.

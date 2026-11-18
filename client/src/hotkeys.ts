@@ -73,6 +73,22 @@ export function useHotkeys(): void {
           e.preventDefault();
           st.setPlayhead(totalSourceDuration(st.project.clips), true);
           return;
+        case 'BracketLeft': {
+          e.preventDefault();
+          const total = totalSourceDuration(st.project.clips);
+          const t = Math.max(0, Math.min(total, st.playhead));
+          const end = st.selection && st.selection.end > t + 0.02 ? st.selection.end : total;
+          st.setSelection({ start: t, end });
+          return;
+        }
+        case 'BracketRight': {
+          e.preventDefault();
+          const total = totalSourceDuration(st.project.clips);
+          const t = Math.max(0, Math.min(total, st.playhead));
+          const start = st.selection && st.selection.start < t - 0.02 ? st.selection.start : 0;
+          st.setSelection({ start, end: t });
+          return;
+        }
       }
 
       switch (key) {

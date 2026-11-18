@@ -374,7 +374,7 @@ export function Timeline() {
           <i className="legend" style={{ background: COLORS.selection }} />
           selection
         </span>
-        <span className="muted">drag = select · drag edges = resize · white tabs = trim · ctrl+wheel = zoom</span>
+        <span className="muted">drag or [ / ] = select · c = cut · drag edges = resize · white tabs = trim · ctrl+wheel = zoom</span>
       </div>
     </div>
   );

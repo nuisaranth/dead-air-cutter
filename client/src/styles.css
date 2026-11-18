@@ -111,10 +111,32 @@ input {
   padding: 8px 14px;
   color: var(--muted);
   font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.queue-inbox > span {
+  min-width: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-bottom: 1px solid var(--border);
+}
+
+.queue-inbox-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--accent);
+  font-size: 11px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.queue-inbox-link:hover {
+  text-decoration: underline;
 }
 
 .queue-empty {
@@ -746,10 +768,24 @@ select.clip-gain {
 }
 
 /* Guide view */
+.empty-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
 .empty-guide-link {
   color: var(--accent);
   text-decoration: none;
   font-weight: 500;
+}
+
+.empty-link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
 .empty-guide-link:hover {

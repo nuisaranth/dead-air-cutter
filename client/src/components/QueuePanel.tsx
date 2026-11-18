@@ -18,7 +18,15 @@ const STATUS_LABEL: Record<ProjectSummary['status'], string> = {
 export function QueuePanel({ activeId, onOpen }: Props) {
   const [projects, setProjects] = useState<ProjectSummary[]>([]);
   const [inbox, setInbox] = useState('');
+  const [copied, setCopied] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const copyInbox = () => {
+    if (!inbox) return;
+    void navigator.clipboard.writeText(inbox);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
 
   const refresh = useCallback(() => {
     api.projects().then(setProjects).catch(console.error);
@@ -42,7 +50,25 @@ export function QueuePanel({ activeId, onOpen }: Props) {
   return (
     <div className="queue">
       <div className="queue-inbox" title={inbox}>
-        inbox: <code>{inbox}</code>
+        <span>
+          inbox: <code>{inbox}</code>
+        </span>
+        <button
+          type="button"
+          className="queue-inbox-link"
+          onClick={copyInbox}
+          title="คัดลอก Path โฟลเดอร์ inbox"
+          aria-label="คัดลอก Path โฟลเดอร์ inbox"
+        >
+          {copied ? (
+            '✓'
+          ) : (
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+          )}
+        </button>
       </div>
       {projects.length === 0 && <div className="queue-empty">No projects yet.</div>}
       <ul className="queue-list">

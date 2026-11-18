@@ -59,6 +59,26 @@ input {
 .sidebar-header {
   padding: 12px 14px;
   border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.sidebar-guide-link {
+  font-size: 11px;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 3px 8px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--bg-3);
+  white-space: nowrap;
+}
+
+.sidebar-guide-link:hover,
+.sidebar-guide-link.active {
+  border-color: var(--accent);
 }
 
 .sidebar-header h1 {
@@ -723,4 +743,204 @@ select.clip-gain {
 .clip-move .btn.small {
   margin-top: 0;
   padding: 0 5px;
+}
+
+/* Guide view */
+.empty-guide-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.empty-guide-link:hover {
+  text-decoration: underline;
+}
+
+.guide {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.guide-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-2);
+}
+
+.guide-header h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.guide-sub {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.guide-back {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.guide-back:hover {
+  border-color: var(--accent);
+}
+
+.guide-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 10px 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  flex-wrap: wrap;
+}
+
+.guide-tab {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.guide-tab:hover {
+  color: var(--text);
+}
+
+.guide-tab.active {
+  color: var(--text);
+  border-color: var(--accent);
+  background: var(--bg-3);
+}
+
+.guide-body {
+  flex: 1;
+  overflow: auto;
+  padding: 20px 24px 40px;
+}
+
+.guide-section {
+  max-width: 820px;
+  line-height: 1.65;
+}
+
+.guide-section h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.guide-section h4 {
+  margin: 18px 0 8px;
+  font-size: 13px;
+  color: var(--accent);
+}
+
+.guide-section code {
+  background: var(--bg-3);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.guide-flow {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  margin: 14px 0 22px;
+  flex-wrap: wrap;
+}
+
+.guide-step {
+  flex: 1 1 130px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.guide-step strong {
+  font-size: 12px;
+  color: var(--accent);
+}
+
+.guide-step span {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.guide-arrow {
+  align-self: center;
+  color: var(--muted);
+}
+
+.guide-list {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.guide-code-wrap {
+  position: relative;
+  margin: 8px 0 12px;
+}
+
+.guide-code {
+  margin: 0;
+  padding: 10px 76px 10px 12px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.guide-code code {
+  background: none;
+  padding: 0;
+}
+
+.guide-copy {
+  position: absolute;
+  top: 7px;
+  right: 8px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.guide-copy:hover {
+  border-color: var(--accent);
+}
+
+.guide-links {
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.guide-links a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.guide-links a:hover {
+  text-decoration: underline;
 }
